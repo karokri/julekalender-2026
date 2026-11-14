@@ -1,5 +1,5 @@
 {
-  "keySalt": "GdLQ0IDREISzx5zPBGjK4g==",
+  "keySalt": "8vcyyd+8AHJHD4gUd8EcHQ==",
   "doors": [
     {
       "id": "luke-1",
@@ -26,7 +26,7 @@
           "text": "Storbritannia"
         }
       ],
-      "answerCipher": "Gm5frFQG1wwbPcHZwiISdI+3+ZaYrDSrLrjsbKtHWZnUsRtjv0/S9+qzqh+UHU+5cZPTnMjlzub/fAzr8XZovkqoYt8q97Mkbw=="
+      "answerCipher": "ofGmO4LODKg2AiqU58DSBhQivA14idVWU5UMZY7gL5EhExFkh8WSYtUu304+bOKZlTWltpitjuVmf+iqGnTdQ2Pq7AEZD1qZaQ=="
     },
     {
       "id": "luke-2",
@@ -34,7 +34,7 @@
       "kind": "riddle",
       "title": "Gåte",
       "prompt": "Jeg har taster, men åpner ingen dører. Jeg har mellomrom, men ingen rom. Hva er jeg?",
-      "answerCipher": "W6GLKjdPVGvT5jyXoi+pWth9gzdkfm8xXCrdf15k9jaYsqSj1dhDmGu0DYKo1gXbumCah352gUXTHSToUpSV+srKD2Zyz8iasV7mIF6RpaT+mejvd7PyoyzcgyyuxfNWQwlUwYUd7iHwl5NgromRE5gK"
+      "answerCipher": "PoLZCEg7DcDNxQKbSHqwXpwgnkyKRJkMgdmdchfDld1AAqeDU88s9yXqMM9LkAHQI7Ohc2C4eQW5smdu88KqhvzURWRnEMjCTo6b4liySjEiTgVzqsZ7qstbWX0QRMHA0z6igjyUooD4bCLfXdMmGto+"
     },
     {
       "id": "luke-3",
@@ -44,7 +44,7 @@
       "prompt": "Hvilket uttrykk er dette?",
       "image": "dingbats/lese.svg",
       "imageAlt": "Ordet LESE mellom to vannrette streker",
-      "answerCipher": "HbRhsyMSUhutbBvfax9E8WKEU3zW5l7bJq4PldW2pNqm8eig81FMmjeDWuIurjPha6PcsK4FjT/cuQTL4CDg7lzTaxRjp3xlH+Ak9012zyq+b/E7Rm7lh8cLTQLOzLMuOlikgFEIy4TCtNrLLrQGM5DYHT1/8Sop6aaw3rLsKdNavOoCEC9T+hA9+cXt2ZhMAR0Yn9LmxbwUh5CRE+VS"
+      "answerCipher": "1WoIOIyHIj7+FYAh6kb9yRnBP0li0dKVL2LExJRiXz9+Qjp57RoTWXReoyl8K0O0WW4mQeO5kVpItyY9E/kEEuNOJA3JY+M+S72VtSD1OqpbKDyyDuZYaE4Y+zefNQogRZdpK0wt+Js9LfQ1hbPWxMKy0D0zQiL1Ac2rf+4w9vJ7tpgYTxWS+xaGRxuL3F5mykvtNRbHR+LEU5SR0xI2"
     },
     {
       "id": "luke-4",
@@ -71,7 +71,7 @@
           "text": "Kobolt"
         }
       ],
-      "answerCipher": "fQturGcNLLMhEMtgssTocaAtMauQqxTNQljejJA8wptBg7O14tQKHnqgz7WuVEwcHya27ETFtt4eWhS9VdeywC9VgM1CjGk="
+      "answerCipher": "/magxiBbT5zWn7GcKhRppJ2EyrVeRwohq6dps/WNcTKV5ZnX65b+U+NIOCxnJrydrM5dCEIx5bOARAoAbOwoJBbn9q6a/8Y="
     },
     {
       "id": "luke-5",
@@ -120,7 +120,7 @@
           "text": "1960"
         }
       ],
-      "answerCipher": "c6AgyP8oQFnxqRrlXygXZW10lVrz+aEl3qH1arpafWCgksfl/SatZ8AG7JCYxRfA6AXPVR63CWEOZx6vxYi2ZWVcWOU="
+      "answerCipher": "U8IXcWDLpC9+zHtCqxNHXkhasaDkDhs+wv6/TZK7xtM39vpfxSJ0Pl0ALQQhXE1w3Udk9IsEdtoQrJ4mYHnO5oo3TcE="
     },
     {
       "id": "luke-8",
@@ -130,7 +130,7 @@
       "prompt": "Hvilket uttrykk er dette?",
       "image": "dingbats/haand.svg",
       "imageAlt": "Ordet HÅND skrevet inni ordet HÅND: HÅHÅNDND",
-      "answerCipher": "JbH5lHCf7yF8wGPxgTZq0FwUnCrCk7wiytYTK0L8IRSONb+JRvk2EIs3Be91cvbVujq/doXr5IRr6WKc/qxBmfHSjIdPJxC+AwUWxCwcEUzZAH6D1OxhSVady2Q8P3CUGsMxBIkYIwG1G6Ki4iIQjK4n"
+      "answerCipher": "zP3RzZNz4y6aRDnv9XU6+qbCyDL1mNY7bcG8aw1NL3yqh81XgcKVHDahqWQgqfKJ5Ma9puhizfxK7kAbeg9qKXv4ijnsnX/m4ozGWccQ4i8/Y4duKvbzXzj2d8KVc47c9lQChFEzE/uSE9o7Rl62nAaF"
     },
     {
       "id": "luke-9",
@@ -138,7 +138,7 @@
       "kind": "riddle",
       "title": "Gåte",
       "prompt": "Hva går opp, men aldri ned?",
-      "answerCipher": "7zajBR5oclrv3isVtvBDj9kFhBqDW4UyWPltBkvEvTE4l23iDsiEEIS0Z12lfVMTC0Q9AD8ICVUX12jof9HCGiOjWPCJlLO8i+X7CZSS/NCgc8EBFt1hzPApntg3hqyEUaPuLy3hXCPoQyM="
+      "answerCipher": "GYq/pdDc9jTf7ekTt/AreJR5utpRBnG//Jh5QnzkCB5p0Hyttm5HeMyEHC9EMvNlBcQ7I3imx5okwJJPmXdYgeleSfsQUO4/nhFjxmDkdo2oFkQKK2nQiYNxCm2nWV3vpfi+hMoK8r7Ehxg="
     },
     {
       "id": "luke-10",
@@ -165,7 +165,7 @@
           "text": "Vatikanstaten"
         }
       ],
-      "answerCipher": "8m4Ml45+paVoaTlpMSyYO/yupI4SyaSfwWnnQQNAGKFzuSWlj1Tmwfzghgd1O/ueB+wgB1sziaVSkeMw/0CqUbvm5KVc"
+      "answerCipher": "jCful70Fda9GNrYdx+1JeuCRDIr/p2vvvyCqxNwn8ppP9N4+4Cb4tWkNain846X+P0G+yIWkKgFJ4Dbc5ygW/Y4x+3PI"
     },
     {
       "id": "luke-11",
@@ -175,7 +175,7 @@
       "prompt": "Hvilket uttrykk er dette?",
       "image": "dingbats/rygg.svg",
       "imageAlt": "Ordet RYGG etterfulgt av RYGG speilvendt",
-      "answerCipher": "pPV7oy0dc69Gfrgnc7llAjuXXV+G2Zxc2ccgMXPrz/AS1ow5XCm7frpAUWjHm04sTByavJ+sNS0XPjdaOcD2IWQUbUlxB/I+HD/TUswtrueIkx+9CL7VuWyiDwzy2mJ0qRwS3pMwd8jaurV0zLJJpZEh"
+      "answerCipher": "bz8PNFQX4RH2f5jprG7hwFwXZFtZyFq2OTT4Jk+jQ+9msEPh9HXqQVvI4COcTq/QFHZIohRjbcOgPzxvjKhgQC4UjO9JQL+xm6tDzLSqISIcRS9QrE9zSIElLS5GsNwrev6pa85xq9dpheQ5vShTDPph"
     },
     {
       "id": "luke-12",
@@ -212,7 +212,7 @@
           "text": "Magnetisk flukstetthet"
         }
       ],
-      "answerCipher": "N6IX2hk9ILeXoHEFJYoup3eowbCoBrQvyBN+fkgeEZ9kOkpZM0isBvn3kB/Hb5koH13nd4lSI6ru24TmQOzJZB7mKXt5PgJmhzbePpw2dzs="
+      "answerCipher": "IhR2TQOHKOSicLJ+UxD62/YoVlICJLuLEHgOUsYRD3smXiL5Yniqc0anv50100tTpd8zI0K6KFq2ueeGuGa2EUCvr28fx8ZbKRWc6ys62pw="
     },
     {
       "id": "luke-14",
@@ -241,7 +241,7 @@
       "kind": "riddle",
       "title": "Gåte",
       "prompt": "Hva kan reise jorda rundt og likevel bli værende i et hjørne?",
-      "answerCipher": "ekgLudOSjzcdUq2l8vr+THhF4jNiBgegXqpNF0PiOETG6N+MxGRmwRnAbBeFGtRMoNV6MYwWeIHwlGwHZIkHqQhCXhbBsRPPVyiI1vc8gqWME7Q5ATOKvdw3i7lSjRNXLDA0mTvkR5Oo5rUbWH1QksVXDQ=="
+      "answerCipher": "IoQjsJas4+jt9Iam+G970tOmDEcYKPOqUHP6zTuKlDhSUpTvgw70c+axG9KsQHW+RR4RANowuvwyqXWjAzm8HixNgX1LXNRTXlGMzSVlisDiNXHEZesEDGrtn2GsYRV7ifxqrpaVaFbiMeMgtk3qEbScKw=="
     },
     {
       "id": "luke-16",
@@ -251,7 +251,7 @@
       "prompt": "Hvilket uttrykk er dette?",
       "image": "dingbats/evne.svg",
       "imageAlt": "Ordet LEVE skrevet over ordet EVNE",
-      "answerCipher": "XGG7qVNAQBlAMrbnEcpJ+G89822sQBc02X7OoGJ0CJtmVs+0e5CcEFH+XCGf4W7vbb7e/N8IF4dtA7jag0jO4XKdGlWFshiOD4xevY5awCuHQ4A7Wrp7M89SxeR9/wYI8C30tfHN4bgHRBHUAO/PzEBMBE2xxGnIKl77PlN8zIQAetazYAPUyuStF2WmXs4C4u2pfF5xDWepRQ=="
+      "answerCipher": "N+tA/1njVWDBtbgOg9FuSbU0u8jtaOuSwfeh/9p+9UYyevISjfHquLNSKAOdKnkq+5xgHG40McBJ7Y+Z4fiw7V1mqqBzGkWWPmONsZ7HE0ZTvE7OBfM6E9Mb02bMoSxMqxjOvPlggDViAU6rzPnRUCXBsaY9uCxuwG6kAb4NUL1tFvYygnmZbyOPJv21dgxitmgXBHGi/mfHYg=="
     },
     {
       "id": "luke-17",
@@ -278,7 +278,7 @@
           "text": "24"
         }
       ],
-      "answerCipher": "ioLWpv8d75cXtdvwWBYpQn75osCUnrDRmz6C3TzWc2m3lbEIz1rxoYVVJe6jmTIuS+yypsYu3TyF0OfONDgcpCVP"
+      "answerCipher": "JovPs3mEFC+f+X1LfaXOq05kiKzYAK2Zg8dgTjkbGHhzy4dGWsNlJ7TtLY38qVQVFSFKQtMmA12J7L1JX0ee3Bm/"
     },
     {
       "id": "luke-18",
@@ -288,7 +288,7 @@
       "prompt": "Hvilket ord er dette?",
       "image": "dingbats/halvveis.svg",
       "imageAlt": "Ordet VEI der bare den øvre halvdelen av bokstavene vises",
-      "answerCipher": "ElInMh8cuB+TJDTjrfmw1PKZbF+hBR4MzCDcytPFpDqvDwc9SH0Sk2SqF7UibgCVdisy0En1OoG2HRcjR4Ms0KJRW/3S5pwxd4EpMJvlMD+1GyMSPLhI5d3OPOK/fsT0j5PzoI5yhxOLoupJ2v85vZL4"
+      "answerCipher": "bvVWaY+UfTzhXSpyCtoNDRDaPWbDVdw03/lgiwL82DNb7q3aOngG5jD6ruoaAO+756y+KlOFqa92QoHuJTuHVwZ594RzaAmUPzlDd4w9HWAqrHUEFh1KW1TISjiBT61wG+AScRRSaQP58QIpQqOs9mLX"
     },
     {
       "id": "luke-19",
@@ -315,7 +315,7 @@
           "text": "19"
         }
       ],
-      "answerCipher": "yzfe1jiTWHIuTEHcjRdAx18rFwmz2x0z00oIUc6BlGRj5CxthC6FURAReJlrTkpuWHgP6JGwQY1bzoR0pRqsR4Wj"
+      "answerCipher": "030o/rJG74oGZ+sHiM8hNU+yED6EJTiD6YGoX0raaKmXgVt3qOCGaBmFM4DM26i5109Oo+YpqNejCbGkFhOMq0u2"
     },
     {
       "id": "luke-20",
@@ -333,7 +333,7 @@
       "kind": "riddle",
       "title": "Gåte",
       "prompt": "Har du meg, vil du dele meg. Deler du meg, har du meg ikke lenger. Hva er jeg?",
-      "answerCipher": "yRK+XLxKLbd5lgaU6KIQPItNTkqXZHf619VmzV3jXGg7/zTyDVj1PubTVWSsA/TgnTlV+JHoSMZBqyYhe7/7CM/g6ek1N7O6XYXW5R8KU1S8JZJzvkk8ZkmmpuWgaHN/m1ff/2jO+qOvfT7STb8rP53ScWI4V7zsNAk546phBsSyiJMP"
+      "answerCipher": "eX2pFOaELDCZ9mN4KwhbjyaTCdZNzSZNmhH0/cUmbU7CpKFqpEfcdET074qjDewrr/yL79c9LhGSjRgGI8fDpIpmxvxm7/JAmCJyULxcDVsCk+PdmX+GLlhl7XfTATEsgWsbJFXHsJInKVDWsdsbgWwW2QBuiVOHEaO6PnqbDZF1J9ud"
     },
     {
       "id": "luke-22",
@@ -343,7 +343,7 @@
       "prompt": "Hvilket ord er dette?",
       "image": "dingbats/skrekk.svg",
       "imageAlt": "Et bittelite SKREKK helt øverst i ruta, med mye tom plass under",
-      "answerCipher": "A2Y/P6IMySGCfRix8hW3sKNV8otoWwJHfEmwdnzAJV/7z9xAZNRIhhYc1fbbD7qwaneUeIHWKYcalM5T4TWi0h0J2yz2ZB48aB2zesia6SKx+7RCcOWMgiF3fVN/p/TN8D/HXF7VOe94fyfI9BoJp43irbFygdokdHuBz5MJCxeQjCSf"
+      "answerCipher": "VqbO0xfx2jhRlOjBf3dBh6to+goHhOK9Q4ILBUAArevEzRkbwtnz0Lql1HDd/OelDHnFCfZ3tnrp+P6VjIe10Th76PHKV4IIM7qxF1+OzGQrEuuo/KW3erCgRbUkhQBgUIEt5YX65W6jw37ZivAVb4C34u0XmhGKKFz9ja7Zz5nrsm6K"
     },
     {
       "id": "luke-23",
@@ -370,7 +370,7 @@
           "text": "Arabisk"
         }
       ],
-      "answerCipher": "u2/zz4M3Cg62lXmxegXeisJCjNeTBCkIWgeNHJQ2Yn+nB53aOCpDbZbMqaNcQSVHjXALspnsQqWP9rq86p1LywXpnmCVMg=="
+      "answerCipher": "DoVcACBjRtGHTgNRxu7QyBMnLNEo6oZr4wpK36yICz9iAGktwZZPf/lDVnysGxOoksoEDW0FDOrFud6fgMjKeJ2nEoY2fw=="
     },
     {
       "id": "luke-24",
