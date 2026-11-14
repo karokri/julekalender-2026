@@ -1,0 +1,196 @@
+.calendar {
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 0 0, rgb(244 197 66 / 0.35) 0 18px, transparent 19px),
+    radial-gradient(circle at 100% 0, rgb(244 197 66 / 0.35) 0 18px, transparent 19px),
+    radial-gradient(circle at 0 100%, rgb(244 197 66 / 0.35) 0 18px, transparent 19px),
+    radial-gradient(circle at 100% 100%, rgb(244 197 66 / 0.35) 0 18px, transparent 19px),
+    linear-gradient(var(--board-top), var(--board-bottom));
+  outline: 6px solid #fffaf0;
+  outline-offset: -14px;
+  border: var(--outline-width) solid var(--outline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--sticker-shadow);
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(110px, 1fr);
+  grid-auto-flow: dense;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar__cell--big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media (max-width: 760px) {
+  .calendar__grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: minmax(90px, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .calendar { padding: 0.75rem; }
+  .calendar__grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+}
+
+.door {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  perspective: 700px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.door:disabled {
+  cursor: not-allowed;
+}
+
+.door__inside,
+.door__panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: var(--outline-width) solid var(--outline);
+  border-radius: var(--radius-md);
+}
+
+.door__inside {
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #fffaf0, #f6dfae);
+  box-shadow: inset 0 6px 0 rgb(42 27 23 / 0.18);
+}
+
+.door__panel {
+  background: var(--door-color);
+  box-shadow: 4px 4px 0 var(--outline);
+  transform-origin: left center;
+  transition: transform 0.55s cubic-bezier(0.4, 1.4, 0.6, 1);
+  backface-visibility: hidden;
+}
+
+.door__panel::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 3px dashed rgb(255 255 255 / 0.55);
+  border-radius: calc(var(--radius-md) - 6px);
+}
+
+.door__panel::after {
+  content: '';
+  width: min(46%, 64px);
+  aspect-ratio: 2;
+  margin-top: 0.1rem;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2060%2030%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23fffaf0%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.7%22%3E%3Cpath%20d%3D%22M30%2024%20C%2020%2024%2C%2010%2020%2C%207%2012%20C%205%206%2C%2011%203%2C%2014%207%20C%2016%2010%2C%2013%2013%2C%2010%2011%22/%3E%3Cpath%20d%3D%22M30%2024%20C%2040%2024%2C%2050%2020%2C%2053%2012%20C%2055%206%2C%2049%203%2C%2046%207%20C%2044%2010%2C%2047%2013%2C%2050%2011%22/%3E%3C/g%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2216%22%20r%3D%226%22%20fill%3D%22%23f4c542%22%20stroke%3D%22%232a1b17%22%20stroke-width%3D%222%22/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.door__number {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #fff;
+  -webkit-text-stroke: 2px var(--outline);
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--outline);
+}
+
+.calendar__cell--big .door__panel::after { width: 34%; max-width: 110px; }
+
+.calendar__cell--big .door__number {
+  font-size: clamp(3rem, 8vw, 5rem);
+}
+
+.door__badge {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 1rem;
+}
+
+.door__badge--today {
+  top: -12px;
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 0.1rem 0.5rem;
+  background: var(--gold);
+  border: 2px solid var(--outline);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--outline);
+  white-space: nowrap;
+}
+
+.door__result {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--outline);
+}
+
+.door--locked .door__panel {
+  filter: saturate(0.6) brightness(0.85);
+}
+
+.door--open:hover .door__panel,
+.door--open:focus-visible .door__panel {
+  transform: rotateY(-28deg);
+}
+
+.door--answered .door__panel,
+.door--empty .door__panel {
+  transform: rotateY(-105deg);
+}
+
+.door--answered:hover .door__panel {
+  transform: rotateY(-115deg);
+}
+
+.door--today.door--open {
+  animation: door-wiggle 2.2s ease-in-out infinite;
+}
+
+.door--today.door--open .door__panel {
+  box-shadow: 4px 4px 0 var(--outline), 0 0 0 4px var(--gold), 0 0 24px 6px rgb(244 197 66 / 0.7);
+}
+
+.door:focus-visible {
+  outline: 3px dashed var(--gold);
+  outline-offset: 4px;
+  border-radius: var(--radius-md);
+}
+
+@keyframes door-wiggle {
+  0%, 80%, 100% { transform: rotate(0); }
+  84% { transform: rotate(-3deg); }
+  88% { transform: rotate(3deg); }
+  92% { transform: rotate(-2deg); }
+  96% { transform: rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .door--today.door--open { animation: none; }
+  .door__panel { transition: none; }
+}
+
+/* A nisse peeks out when you start opening a door. */
+.door__peeker { transform: translateY(40%); transition: transform 0.4s cubic-bezier(0.3, 1.6, 0.5, 1) 0.1s; }
+.door--open:hover .door__peeker,
+.door--open:focus-visible .door__peeker { transform: translateY(0); }
+.door__inside .nisse { max-width: 80%; height: auto; }
+.door__icon { font-size: 2rem; }
+.door__result--small { font-size: 1rem; }

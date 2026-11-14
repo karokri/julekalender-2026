@@ -1,0 +1,8 @@
+node_modules
+dist
+*.local
+.env
+# Contains the answers in plain text – never commit
+doors.source.json
+*.tar.gz
+dist-demo

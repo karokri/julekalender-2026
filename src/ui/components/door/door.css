@@ -1,0 +1,55 @@
+.door-kind {
+  display: inline-block;
+  margin: -0.25rem 0 0.5rem;
+  padding: 0.15rem 0.7rem;
+  background: var(--gold);
+  border: 2px solid var(--outline);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.door-title { margin: 0.25rem 0 0; font-size: 1.4rem; color: var(--green); }
+
+.door-body p { margin: 0.5rem 0; }
+
+.door-body__image {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 0.5rem auto 0.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: 4px 4px 0 var(--outline);
+}
+
+.door-body__list h3 { margin: 1rem 0 0.25rem; color: var(--green); }
+.door-body__list ul,
+.door-body__list ol { margin: 0.25rem 0; padding-left: 1.4rem; }
+.door-body__list li { margin: 0.35rem 0; }
+
+.quiz__form { display: grid; gap: 0.6rem; }
+.quiz__form .quiz__options { margin: 0; }
+.quiz__form .quiz__hint { margin: 0; }
+
+.points-list {
+  display: inline-grid;
+  gap: 0.2rem;
+  margin: 0.25rem 0 0.75rem;
+  padding: 0.6rem 1rem;
+  background: #fff6d6;
+  border: 3px solid var(--outline);
+  border-radius: 14px;
+  list-style: none;
+  text-align: left;
+  font-weight: 600;
+}
+
+.points-list__total {
+  margin-top: 0.2rem;
+  padding-top: 0.3rem;
+  border-top: 2px dashed rgb(42 27 23 / 0.3);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--green);
+}

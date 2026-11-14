@@ -1,0 +1,387 @@
+{
+  "keySalt": "hbkPLggXOucjCg/puGXFXA==",
+  "doors": [
+    {
+      "id": "luke-1",
+      "day": 1,
+      "kind": "quiz",
+      "title": "Tidssoner",
+      "prompt": "Hvilket land har flest tidssoner når oversjøiske områder regnes med?",
+      "funFact": "Takket være oversjøiske områder som Fransk Polynesia og Réunion har Frankrike 12 tidssoner. Russland har 11.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Russland"
+        },
+        {
+          "id": "b",
+          "text": "USA"
+        },
+        {
+          "id": "c",
+          "text": "Frankrike"
+        },
+        {
+          "id": "d",
+          "text": "Storbritannia"
+        }
+      ],
+      "answerCipher": "rQocI2jniD3RJIKkGNzJpB3b0B7TaHyF38swjIBRBCLifwonP3DNzjqMWEv8sYswzEucmUWNG6vFRB+2C8zqoYaoQiir4vF4Iw=="
+    },
+    {
+      "id": "luke-2",
+      "day": 2,
+      "kind": "riddle",
+      "title": "Gåte",
+      "prompt": "Jeg har taster, men åpner ingen dører. Jeg har mellomrom, men ingen rom. Hva er jeg?",
+      "answerCipher": "RbS47eGYQusOcHollRvpssx3hcgfxPL2QGwerfQQ6G4kzCb6rBG5p2IoPbnlrnwggCjytfQFx0/bJFFuVljzbUwU61rJUOF4fttMcahwuhn0n4tzgcKWJLYVYzJ6YlFS+qdGO0oQZTq6HzOm7c6XbR1E"
+    },
+    {
+      "id": "luke-3",
+      "day": 3,
+      "kind": "dingbat",
+      "title": "Dingbat",
+      "prompt": "Hvilket uttrykk er dette?",
+      "image": "dingbats/lese.svg",
+      "imageAlt": "Ordet LESE mellom to vannrette streker",
+      "answerCipher": "Cy/OLx9yXwym5d5GOHTp2G00LFvhqFoXS/y5SVkZhwKwyk4rd6tGR5/x1ur2My0fJXUElVg9svELVw6gHRwHGecGUlyCUMVpZWLein6xrsWzMrzQTR7fbkgyBvD8CniHhGsmg9RT/acX+cqnFZGP5x4XtNHMIFiqZESRmQWrNCCbrRP7GitafzTwWTlPU8NZ7R/f7f6XAYpOILQGRLT4"
+    },
+    {
+      "id": "luke-4",
+      "day": 4,
+      "kind": "quiz",
+      "title": "Kjemi",
+      "prompt": "Hvilket grunnstoff har det kjemiske symbolet W?",
+      "funFact": "På engelsk heter wolfram «tungsten» – fra svensk «tung sten».",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wolfram"
+        },
+        {
+          "id": "b",
+          "text": "Vanadium"
+        },
+        {
+          "id": "c",
+          "text": "Xenon"
+        },
+        {
+          "id": "d",
+          "text": "Kobolt"
+        }
+      ],
+      "answerCipher": "Z0a4lF3neMNSkUBJGT2F6OHW9nFfFnQCyXpxhtXtjB+WFxRh5HlKD4WOp8xhVgmH+sDb16xgnylD4ti5lUI8FIRhF7S/Zqg="
+    },
+    {
+      "id": "luke-5",
+      "day": 5,
+      "kind": "surprise",
+      "title": "Tankenøtt",
+      "body": [
+        "Ingen poeng i dag – bare noe å bryne hjernen på:",
+        "Et balltre og en ball koster 110 kroner til sammen. Balltreet koster 100 kroner mer enn ballen. Hva koster ballen?",
+        "Tenk deg godt om før du leser videre …",
+        "Svar: 5 kroner. Da koster balltreet 105, og til sammen blir det 110. Svarte du 10? Det gjør de fleste!"
+      ]
+    },
+    {
+      "id": "luke-6",
+      "day": 6,
+      "kind": "challenge",
+      "title": "Snøengel-søndag",
+      "body": [
+        "Lag en snøengel eller en snømann! Ingen snø der du bor? Tegn en i stedet.",
+        "Trykk på knappen når du har gjort det."
+      ]
+    },
+    {
+      "id": "luke-7",
+      "day": 7,
+      "kind": "quiz",
+      "title": "Historie",
+      "prompt": "Hvilket år ble Norge med i NATO?",
+      "funFact": "Norge var ett av de tolv landene som grunnla NATO 4. april 1949.",
+      "options": [
+        {
+          "id": "a",
+          "text": "1945"
+        },
+        {
+          "id": "b",
+          "text": "1949"
+        },
+        {
+          "id": "c",
+          "text": "1955"
+        },
+        {
+          "id": "d",
+          "text": "1960"
+        }
+      ],
+      "answerCipher": "Eb0EdKgyei58cT2IQ/MI7IF8F4rfwtH85uPPPwVKX1BBd2lVGVyaGdPNepFLdKmCy0hhYdLMZTl42hKtmXC7h6g2jNs="
+    },
+    {
+      "id": "luke-8",
+      "day": 8,
+      "kind": "dingbat",
+      "title": "Dingbat",
+      "prompt": "Hvilket uttrykk er dette?",
+      "image": "dingbats/haand.svg",
+      "imageAlt": "Ordet HÅND skrevet inni ordet HÅND: HÅHÅNDND",
+      "answerCipher": "yiRZ5ZndXz2kAfniJsQNVgItvr1g/3kIbO2NUiclRVNygkjzqWzKhepuAFES1xgCyWCCL42JyCwTO3MVlnzyE5hDt91co5+cUY4QXekDVzgMWzT51dCqc0WNoPGIj6lF7pDZGDd9BiqA/EUe0aUEQAhy"
+    },
+    {
+      "id": "luke-9",
+      "day": 9,
+      "kind": "riddle",
+      "title": "Gåte",
+      "prompt": "Hva går opp, men aldri ned?",
+      "answerCipher": "22kcAlY5mOBngHbHYfYHw/f5EXhz2j2bggBBlsthxNLSl1d//eUgRezI5m8dbVdxax6/X9WfhStfoAJFXA5Ph9IAzMJ8T2w4GrHkd6hNSpXnkZ5/38fT2i9Ez5bgjg2ey6/zDuyEdaiRnhY="
+    },
+    {
+      "id": "luke-10",
+      "day": 10,
+      "kind": "quiz",
+      "title": "Flagg",
+      "prompt": "Hvilket land har det eneste nasjonalflagget som ikke er rektangulært?",
+      "funFact": "Nepals flagg er to trekanter oppå hverandre. Sveits og Vatikanstaten har kvadratiske flagg – og et kvadrat er også et rektangel.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nepal"
+        },
+        {
+          "id": "b",
+          "text": "Bhutan"
+        },
+        {
+          "id": "c",
+          "text": "Sveits"
+        },
+        {
+          "id": "d",
+          "text": "Vatikanstaten"
+        }
+      ],
+      "answerCipher": "K3tyWLRuUQ9kajCtYLgYXVUeSQzJDJprQsNTpGCueMavRaw5di4WV0zrNOQmF8z3PAgzcpV6YbeREVc3YOtfj8BCt7rA"
+    },
+    {
+      "id": "luke-11",
+      "day": 11,
+      "kind": "dingbat",
+      "title": "Dingbat",
+      "prompt": "Hvilket uttrykk er dette?",
+      "image": "dingbats/rygg.svg",
+      "imageAlt": "Ordet RYGG etterfulgt av RYGG speilvendt",
+      "answerCipher": "0T//m5VF/aioqRsGa23/GxcqiHrb/Od/ziSbi9MryRiVtH6Ul3zMibCj0vAlbLMZzIfHikNfU3opQFgkBT5Ok7tJI/AA1hf9VRxHwcxlSEc1/+5rC/ioDohcz9RjJtz86W1qaOhvQs7CtvjdA/6fFuul"
+    },
+    {
+      "id": "luke-12",
+      "day": 12,
+      "kind": "challenge",
+      "title": "Bakelørdag",
+      "body": [
+        "Bak pepperkaker, lag julepynt eller bygg et pepperkakehus – alene eller sammen med noen.",
+        "Bonusutfordring: Lag en pepperkake som ligner på noen du kjenner 🎨"
+      ]
+    },
+    {
+      "id": "luke-13",
+      "day": 13,
+      "kind": "quiz",
+      "title": "Fysikk",
+      "prompt": "Hva måles i enheten lux?",
+      "funFact": "1 lux er én lumen per kvadratmeter. Sterkt sollys kan gi over 100 000 lux.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Belysningsstyrke"
+        },
+        {
+          "id": "b",
+          "text": "Lydtrykk"
+        },
+        {
+          "id": "c",
+          "text": "Radioaktivitet"
+        },
+        {
+          "id": "d",
+          "text": "Magnetisk flukstetthet"
+        }
+      ],
+      "answerCipher": "MJQRg626ojHmFWs0mA1e6g0KPboAm40o4HW0XAAmySlwHnQBZ5m1Zbad7XyBWdqr+AVIaO8iVyAXnECXiG9MNNmWTRPJC//nH6Tu96ThBNA="
+    },
+    {
+      "id": "luke-14",
+      "day": 14,
+      "kind": "surprise",
+      "title": "Karolines spilleliste 🎶",
+      "body": [
+        "Her er låtene jeg hører mest på akkurat nå:"
+      ],
+      "lists": [
+        {
+          "ordered": true,
+          "items": [
+            "[Fyll inn: låt – artist]",
+            "[Fyll inn: låt – artist]",
+            "[Fyll inn: låt – artist]",
+            "[Fyll inn: låt – artist]",
+            "[Fyll inn: låt – artist]"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luke-15",
+      "day": 15,
+      "kind": "riddle",
+      "title": "Gåte",
+      "prompt": "Hva kan reise jorda rundt og likevel bli værende i et hjørne?",
+      "answerCipher": "QMwCbEQke4cQStOYxuzKINDOG01nn1Nyz5Qj/Mm6ZkOulLF3myPda9F9llHym+e96sR0eNPhYuwQyRyfF13eG57PJRqL+hNcF2mnYNvR22ocbeolyDqW3nYDtWGl2Co4Y/9YREFdEtnetHLMRJCBuGJh8A=="
+    },
+    {
+      "id": "luke-16",
+      "day": 16,
+      "kind": "dingbat",
+      "title": "Dingbat",
+      "prompt": "Hvilket uttrykk er dette?",
+      "image": "dingbats/evne.svg",
+      "imageAlt": "Ordet LEVE skrevet over ordet EVNE",
+      "answerCipher": "NukTBHBcKkwijWRu6DqQaisHnOfa1sehg/ouG5fE5zQ04h99E/GCCblTupr2QBThjLbLxXcnZ0bIYteoqpnVLVL1lAxDNgKyd6bpa7Nz7UuvdDm1eLGxzRabOZ7uxpuDisKhymrFY/MIwKpf+/sxGZ3e4L0NZrF729GPVAkR/7o7cGVZXZQB5wYEAYHQn/Dc6capFP77mWQLMg=="
+    },
+    {
+      "id": "luke-17",
+      "day": 17,
+      "kind": "quiz",
+      "title": "Islandsk jul",
+      "prompt": "På Island kommer ikke én julenisse, men flere «jólasveinar» – én ny hver natt før jul. Hvor mange er de?",
+      "funFact": "De kommer én og én de 13 siste nettene før jul, og har navn som Pølsetyven og Dørsmelleren.",
+      "options": [
+        {
+          "id": "a",
+          "text": "7"
+        },
+        {
+          "id": "b",
+          "text": "9"
+        },
+        {
+          "id": "c",
+          "text": "13"
+        },
+        {
+          "id": "d",
+          "text": "24"
+        }
+      ],
+      "answerCipher": "SAQK+weud7dwCcRBkIzyv9UTvkLWslQoC8z1/nJnEa0MZ8Su4Q6K87Shyjts38raT1AZMLs+Zg8NhNcdxDfOL6HH"
+    },
+    {
+      "id": "luke-18",
+      "day": 18,
+      "kind": "dingbat",
+      "title": "Dingbat",
+      "prompt": "Hvilket ord er dette?",
+      "image": "dingbats/halvveis.svg",
+      "imageAlt": "Ordet VEI der bare den øvre halvdelen av bokstavene vises",
+      "answerCipher": "mhoWXXCxJDJ71NU5QM+GIz03uSWUMBWI3GE2OzLSEbkHJlvaxGXMC1gyTaC7l1KcqqSxAsvSBSk3e4aHom/XuBuKWRYOgFGBk9edRsnAjI/9BAAIVl8kIMZcd6usY9+uut0T5QCcVi4IiUZ/RhmAJ9yj"
+    },
+    {
+      "id": "luke-19",
+      "day": 19,
+      "kind": "quiz",
+      "title": "Norge",
+      "prompt": "Hvor mange fylker har Norge fra 2024?",
+      "funFact": "Fra 2020 til 2023 hadde Norge 11 fylker. Før det var det 18, og før Trøndelag ble slått sammen i 2018 var det 19.",
+      "options": [
+        {
+          "id": "a",
+          "text": "11"
+        },
+        {
+          "id": "b",
+          "text": "15"
+        },
+        {
+          "id": "c",
+          "text": "18"
+        },
+        {
+          "id": "d",
+          "text": "19"
+        }
+      ],
+      "answerCipher": "nzYQR6laOH/GzolrCjTHIl3L6Lh/2Fop1RwncaeWsdvDAD7x1DMIhJVf3k7kDzhvIqEBLx8T34jkhkUu63K+FD3U"
+    },
+    {
+      "id": "luke-20",
+      "day": 20,
+      "kind": "challenge",
+      "title": "Ring en du er glad i",
+      "body": [
+        "Ring, send en tegning eller skriv en hilsen til noen du ikke har snakket med på en stund – kanskje en tante, en besteforelder eller en gammel venn.",
+        "Det er den fineste gaven som finnes, og den koster ingenting 💛"
+      ]
+    },
+    {
+      "id": "luke-21",
+      "day": 21,
+      "kind": "riddle",
+      "title": "Gåte",
+      "prompt": "Har du meg, vil du dele meg. Deler du meg, har du meg ikke lenger. Hva er jeg?",
+      "answerCipher": "e56oPs1oGL34XnBxhJL7C1fL8txriCP5UtQYXJVM0FokG3fqYcV3DBwjcLP/i7sJEbqtLVOXGlzePrFKc6vmUeGtmjnmb1uUjgeCTIGY1CKbTrscnvyYRUxS0gzBh7zO1pM3eziS/ygwpSOTgygIKgAE41htc/2tM/nYt13eg7r2fmWj"
+    },
+    {
+      "id": "luke-22",
+      "day": 22,
+      "kind": "dingbat",
+      "title": "Dingbat",
+      "prompt": "Hvilket ord er dette?",
+      "image": "dingbats/skrekk.svg",
+      "imageAlt": "Et bittelite SKREKK helt øverst i ruta, med mye tom plass under",
+      "answerCipher": "8cuvpkCJRsPcRsz6nHWJoWpV6vve+eBh3cWJdJtG2SOcq7CREV7tsUAn9sI1pP+8xDI5vaFWZO/v5a288vzQ0yFu30zx5VchLpP0G+4oshVLNXppaxlyovC+jajnizP4xh9torWECHbNTceG3Sh08/RilobtTx254s7+dzYQR/pt0dna"
+    },
+    {
+      "id": "luke-23",
+      "day": 23,
+      "kind": "quiz",
+      "title": "Språk",
+      "prompt": "Hvilket språk har nest flest morsmålsbrukere i verden, etter mandarin?",
+      "funFact": "Engelsk har flest brukere totalt, men de fleste av dem har det som andrespråk.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engelsk"
+        },
+        {
+          "id": "b",
+          "text": "Spansk"
+        },
+        {
+          "id": "c",
+          "text": "Hindi"
+        },
+        {
+          "id": "d",
+          "text": "Arabisk"
+        }
+      ],
+      "answerCipher": "W/1jZHEOIK7AgRZLsviIum89D1zEPDdDhTt0doCvS1gbyE8+25ohTQPDaJwtFL/F+Fmq6ybyj+oZDMxseuyabjHvmmuwaA=="
+    },
+    {
+      "id": "luke-24",
+      "day": 24,
+      "kind": "surprise",
+      "title": "God jul fra Karoline! 🎄",
+      "body": [
+        "Tusen takk for at du var med på julekalenderen min i år! Det har vært så gøy å følge med på svarene deres.",
+        "Sjekk poengtavla og se hvem som ble årets julekalendermester – og hvem som er den største nissevennen 🏆",
+        "God jul og godt nytt år! Klem fra Karoline 💛"
+      ]
+    }
+  ]
+}
