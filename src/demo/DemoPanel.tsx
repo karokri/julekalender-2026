@@ -9,7 +9,7 @@ import './demo.css';
 const SCENE_BUTTONS: { action: SceneAction; label: string }[] = [
   { action: 'lucia', label: '🕯️ Luciatog' },
   { action: 'snowballs', label: '❄️ Snøballkrig' },
-  { action: 'cookies', label: '🍪 Pepperkakeregn' },
+  { action: 'cookies', label: 'Pepperkakeregn' },
   { action: 'skate', label: '⛸️ Skøytetur' },
   { action: 'tickle', label: '😆 Kile alle' },
 ];

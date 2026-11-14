@@ -9,7 +9,7 @@ import type { KeyValueStorage } from './storage';
  */
 export interface ParticipantFile extends Participant {
   answers: Answer[];
-  /** Tickles, cookies and Lucia processions in Nissetunet. */
+  /** Tickles and cookies in Nissetunet. */
   interactions?: number;
 }
 

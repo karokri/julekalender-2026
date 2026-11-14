@@ -26,7 +26,6 @@ export function App({ onForgetDevice }: { onForgetDevice: () => void }) {
   const { participant, isLoading, error, lookUp, create, login, leave } = useCurrentParticipant();
   const { services } = useServices();
   const today = services.clock.today();
-  const isLuciaDay = today.month === 12 && today.day === 13;
   const countInteraction = useInteractionCounter(participant?.id);
 
   const content = () => {
@@ -44,7 +43,7 @@ export function App({ onForgetDevice }: { onForgetDevice: () => void }) {
       <KnitBand />
       <div className="page">
         <Header route={route} participant={participant} onLeave={leave} />
-        {participant && route !== 'admin' && <NisseScene isLuciaDay={isLuciaDay} onInteract={countInteraction} />}
+        {participant && route !== 'admin' && <NisseScene today={today} onInteract={countInteraction} />}
         <main>{content()}</main>
         <footer className="footer">
           God jul fra nissen 🎅 · <a href={ROUTE_HASH.admin}>Admin</a> ·{' '}

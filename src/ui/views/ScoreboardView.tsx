@@ -81,7 +81,7 @@ function FriendsBoard({ currentParticipantId }: { currentParticipantId?: Partici
                 <tr>
                   <th>#</th>
                   <th>Navn</th>
-                  <th>Kilinger og pepperkaker</th>
+                  <th>Kilinger og kast</th>
                 </tr>
               </thead>
               <tbody>
@@ -97,7 +97,7 @@ function FriendsBoard({ currentParticipantId }: { currentParticipantId?: Partici
           </div>
         ))}
       <p className="scoreboard__rules">
-        1 poeng hver gang du kiler en nisse eller et reinsdyr, kaster en pepperkake eller starter et luciatog. Lagres
+        1 poeng hver gang du kiler en nisse eller et reinsdyr, eller kaster en pepperkake eller snøball. Lagres
         hvert 15. sekund.
       </p>
     </section>

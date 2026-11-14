@@ -7,9 +7,11 @@ import {
   skateParty,
   snowballFight,
   startProcession,
+  throwPlayerSnowball,
   tick,
   type ActorKind,
   type Point,
+  type SceneRules,
   type SceneState,
 } from './sceneModel';
 
@@ -28,10 +30,19 @@ export const CAST: { kind: ActorKind; look: number }[] = [
 interface SceneOptions {
   /** Average time between Lucia processions. `undefined` = only when asked (demo). */
   processionEveryMs?: number;
+  /** Whether today is a skating day and/or a snowball day. */
+  rules: SceneRules;
 }
 
-export function useScene({ processionEveryMs }: SceneOptions) {
-  const [scene, setScene] = useState<SceneState>(() => createScene(CAST, Math.random, 0));
+export function useScene({ processionEveryMs, rules }: SceneOptions) {
+  const [scene, setScene] = useState<SceneState>(() => createScene(CAST, Math.random, 0, rules));
+  // A new day (or the time machine) can change what the nisser are up to – picked up on the next frame.
+  const rulesRef = useRef(rules);
+  /** The demo panel can force skating or snowball fights on any day. */
+  const forced = useRef<Partial<SceneRules>>({});
+  useEffect(() => {
+    rulesRef.current = rules;
+  }, [rules]);
   const nextProcession = useRef(0);
 
   useEffect(() => {
@@ -46,7 +57,12 @@ export function useScene({ processionEveryMs }: SceneOptions) {
       const elapsed = Math.min(now - previous, 100);
       previous = now;
       setScene((state) => {
-        let next = tick(state, elapsed, now, Math.random);
+        const wanted = { ...rulesRef.current, ...forced.current };
+        const current =
+          state.rules.skating === wanted.skating && state.rules.snowballFights === wanted.snowballFights
+            ? state
+            : { ...state, rules: wanted };
+        let next = tick(current, elapsed, now, Math.random);
         if (processionEveryMs && now > nextProcession.current && !next.procession) {
           next = startProcession(next, now);
           nextProcession.current = now + processionEveryMs * (0.75 + Math.random() * 0.5);
@@ -71,8 +87,19 @@ export function useScene({ processionEveryMs }: SceneOptions) {
     setScene((s) => startProcession(s, performance.now()));
   }, [processionEveryMs]);
 
-  const fight = useCallback(() => setScene((s) => snowballFight(s, performance.now(), Math.random)), []);
-  const skate = useCallback(() => setScene((s) => skateParty(s, performance.now(), Math.random)), []);
+  const throwSnowball = useCallback(
+    (at: Point) => setScene((s) => throwPlayerSnowball(s, at, performance.now())),
+    [],
+  );
+
+  const fight = useCallback(() => {
+    forced.current.snowballFights = true;
+    setScene((s) => snowballFight(s, performance.now(), Math.random));
+  }, []);
+  const skate = useCallback(() => {
+    forced.current.skating = true;
+    setScene((s) => skateParty(s, performance.now(), Math.random));
+  }, []);
   const tickleAll = useCallback(() => setScene((s) => pokeEveryone(s, performance.now(), Math.random)), []);
   const cookieRain = useCallback(() => {
     setScene((s) => {
@@ -84,7 +111,7 @@ export function useScene({ processionEveryMs }: SceneOptions) {
     });
   }, []);
 
-  return { scene, pokeActor, feed, lucia, fight, skate, tickleAll, cookieRain };
+  return { scene, pokeActor, feed, throwSnowball, lucia, fight, skate, tickleAll, cookieRain };
 }
 
 function prefersReducedMotion(): boolean {

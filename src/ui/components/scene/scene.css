@@ -9,7 +9,6 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--sticker-shadow);
   overflow: hidden;
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='26' font-size='26'>🍪</text></svg>") 16 16, pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -160,7 +159,7 @@
 
 .scene__cookie {
   position: absolute;
-  font-size: 1.5rem;
+  line-height: 0;
   transform: translate(-50%, -80%);
   animation: cookie-drop 0.5s cubic-bezier(0.3, 1.8, 0.5, 1);
   filter: drop-shadow(0 3px 0 rgb(42 27 23 / 0.3));
@@ -234,4 +233,18 @@
 
 @media (prefers-reduced-motion: reduce) {
   .scene * { animation: none !important; }
+}
+
+.scene__modes {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.scene__modes .is-active { background: var(--gold); }
+
+.scene__day {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #fff;
 }

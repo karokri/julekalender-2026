@@ -13,7 +13,7 @@ export interface FriendEntry {
   rank: number;
 }
 
-/** Every tickle, cookie and Lucia procession counts – batched so we don't write on every click. */
+/** Every tickle and cookie counts – batched so we don't write on every click. */
 export function recordInteractions(deps: InteractionDeps, participantId: ParticipantId, count: number): Promise<void> {
   return deps.interactions.add(participantId, count);
 }

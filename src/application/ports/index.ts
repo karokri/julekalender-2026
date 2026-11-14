@@ -27,7 +27,7 @@ export interface AnswerRepository {
   save(answer: Answer): Promise<void>;
 }
 
-/** Tickles, cookies and Lucia processions in Nissetunet – counted per participant. */
+/** Tickles and cookies in Nissetunet – counted per participant. */
 export interface InteractionRepository {
   add(participantId: ParticipantId, count: number): Promise<void>;
   findAll(): Promise<{ participantId: ParticipantId; count: number }[]>;

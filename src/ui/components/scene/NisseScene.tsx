@@ -1,22 +1,36 @@
-import { useEffect, type MouseEvent } from 'react';
+import { useEffect, useMemo, useState, type MouseEvent } from 'react';
+import type { CalendarDate } from '../../../domain/types';
 import { isDemo, onDemo } from '../../../demo/demoBus';
 import { SceneNisse, SceneReindeer } from './Characters';
+import { Pepperkake, PEPPERKAKE_CURSOR, SNOWBALL_CURSOR } from './Pepperkake';
+import { rulesFor } from './sceneDays';
 import { isJumping, snowballPosition, type Actor } from './sceneModel';
 import { MAX_COOKIES, useScene } from './useScene';
 import './scene.css';
 
 interface NisseSceneProps {
-  /** On Lucia day the procession comes much more often. */
-  isLuciaDay: boolean;
-  /** Called for every tickle, cookie and Lucia procession – counted on the «Nissevenner» board. */
+  /** Today (or the simulated date) – decides Lucia day, skating days and snowball days. */
+  today: CalendarDate;
+  /** Called for every tickle and cookie – counted on the «Nissevenner» board. */
   onInteract?: () => void;
 }
 
 /** «Nissetunet»: a snowy farmyard where nisser and reindeer live their own lives. */
-export function NisseScene({ isLuciaDay, onInteract }: NisseSceneProps) {
-  const { scene, pokeActor, feed, lucia, fight, skate, tickleAll, cookieRain } = useScene({
-    // In the demo the procession only starts when you press the button.
-    processionEveryMs: isDemo ? undefined : isLuciaDay ? 25_000 : 75_000,
+type ThrowMode = 'cookie' | 'snowball';
+
+export function NisseScene({ today, onInteract }: NisseSceneProps) {
+  const isLuciaDay = today.month === 12 && today.day === 13;
+  const rules = useMemo(
+    () => rulesFor({ year: today.year, month: today.month, day: today.day }),
+    [today.year, today.month, today.day],
+  );
+  const [mode, setMode] = useState<ThrowMode>('cookie');
+  const throwMode: ThrowMode = rules.snowballFights ? mode : 'cookie';
+
+  const { scene, pokeActor, feed, throwSnowball, lucia, fight, skate, tickleAll, cookieRain } = useScene({
+    rules,
+    // The procession only comes on Lucia day (13 December). In the demo it is started from the demo panel.
+    processionEveryMs: !isDemo && isLuciaDay ? 25_000 : undefined,
   });
 
   useEffect(() => {
@@ -27,20 +41,30 @@ export function NisseScene({ isLuciaDay, onInteract }: NisseSceneProps) {
 
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();
-    if (scene.cookies.length < MAX_COOKIES) onInteract?.();
-    feed({
+    const at = {
       x: ((event.clientX - bounds.left) / bounds.width) * 100,
       y: ((event.clientY - bounds.top) / bounds.height) * 100,
-    });
+    };
+    if (throwMode === 'snowball') {
+      onInteract?.();
+      throwSnowball(at);
+      return;
+    }
+    if (scene.cookies.length < MAX_COOKIES) onInteract?.();
+    feed(at);
   };
 
   return (
     <section className="scene" aria-label="Nissetunet">
-      <div className="scene__stage" onClick={handleClick}>
+      <div
+        className="scene__stage"
+        onClick={handleClick}
+        style={{ cursor: throwMode === 'snowball' ? SNOWBALL_CURSOR : PEPPERKAKE_CURSOR }}
+      >
         <Scenery />
         {scene.cookies.map((cookie) => (
           <span key={cookie.id} className="scene__cookie" style={{ left: `${cookie.x}%`, top: `${cookie.y}%` }}>
-            🍪
+            <Pepperkake />
           </span>
         ))}
         {[...scene.actors]
@@ -52,7 +76,9 @@ export function NisseScene({ isLuciaDay, onInteract }: NisseSceneProps) {
               jumping={isJumping(actor, scene.now)}
               onPoke={(id) => {
                 onInteract?.();
-                pokeActor(id);
+                // In snowball mode, clicking someone throws a snowball at them instead of tickling.
+                if (throwMode === 'snowball') throwSnowball({ x: actor.x, y: actor.y - 6 });
+                else pokeActor(id);
               }}
             />
           ))}
@@ -64,19 +90,34 @@ export function NisseScene({ isLuciaDay, onInteract }: NisseSceneProps) {
           })}
       </div>
       <div className="scene__footer">
-        <p className="scene__hint">Kil en nisse eller et reinsdyr, eller klikk i snøen for å kaste en pepperkake. Alt teller på nissevenn-tavla!</p>
-        <button
-          type="button"
-          className="button button--small"
-          onClick={() => {
-            onInteract?.();
-            lucia();
-          }}
-          disabled={!!scene.procession}
-          title="Start et luciatog"
-        >
-          🕯️ Luciatog
-        </button>
+        {rules.snowballFights && (
+          <div className="scene__modes" role="group" aria-label="Hva vil du kaste?">
+            <span className="scene__day">❄️ Snøballdag!</span>
+            <button
+              type="button"
+              className={`button button--small ${throwMode === 'cookie' ? 'is-active' : ''}`}
+              aria-pressed={throwMode === 'cookie'}
+              onClick={() => setMode('cookie')}
+            >
+              Pepperkake
+            </button>
+            <button
+              type="button"
+              className={`button button--small ${throwMode === 'snowball' ? 'is-active' : ''}`}
+              aria-pressed={throwMode === 'snowball'}
+              onClick={() => setMode('snowball')}
+            >
+              Snøball
+            </button>
+          </div>
+        )}
+        <p className="scene__hint">
+          {rules.skating && <strong>⛸️ Isen er trygg i dag! </strong>}
+          {throwMode === 'snowball'
+            ? 'Klikk på en nisse, et reinsdyr eller i snøen for å kaste en snøball.'
+            : 'Kil en nisse eller et reinsdyr, eller klikk i snøen for å kaste en pepperkake.'}{' '}
+          Alt teller på nissevenn-tavla!
+        </p>
       </div>
     </section>
   );

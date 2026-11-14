@@ -13,7 +13,7 @@ Arkitekturen kommer fra Hippo-julekalenderen, og lagringen er den samme som i ju
 
 ## Nissetunet
 
-Øverst på siden ligger et snødekt tun med nisser og reinsdyr (Rudolf også). De går rundt, løper, går på skøyter på isen, kaster snøballer på hverandre og spiser pepperkaker du kaster ut ved å klikke i snøen. Klikker du på dem, kiler du dem. Av og til går nissene i luciatog med lys i håret, og den 13. desember skjer det mye oftere. Du kan også starte et luciatog med knappen. Logikken ligger i `src/ui/components/scene/sceneModel.ts` og er testet.
+Øverst på siden ligger et snødekt tun med nisser og reinsdyr (Rudolf også). De går rundt, løper og spiser pepperkaker du kaster ut ved å klikke i snøen. Klikker du på dem, kiler du dem. Pepperkaker og kiling går hver dag. Noen tilfeldige dager (de samme for alle) er det ⛸️ skøytedag, da går de på skøyter på isen, eller ❄️ snøballdag, da kaster de snøballer på hverandre og du kan velge å kaste snøball i stedet for pepperkake. Dagene velges i `src/ui/components/scene/sceneDays.ts`. Den 13. desember går nissene av og til i luciatog med lys i håret. Det finnes ingen knapp for å starte det. Logikken ligger i `src/ui/components/scene/sceneModel.ts` og er testet.
 
 ## Poeng
 
@@ -24,7 +24,7 @@ Arkitekturen kommer fra Hippo-julekalenderen, og lagringen er den samme som i ju
 | Fartsbonus for de tre første som svarer riktig samme dag | +3 / +2 / +1 |
 | Utfordring | 🎯 på poengtavla, ingen poeng |
 
-**Nissevenner:** I tillegg til quizen finnes en egen tavle, som i Hippo-kalenderen. Du får 1 poeng hver gang du kiler en nisse eller et reinsdyr, kaster en pepperkake eller starter et luciatog. Klikkene lagres samlet hvert 15. sekund, og når du bytter side eller lukker den.
+**Nissevenner:** I tillegg til quizen finnes en egen tavle, som i Hippo-kalenderen. Du får 1 poeng hver gang du kiler en nisse eller et reinsdyr, eller kaster en pepperkake eller snøball. Klikkene lagres samlet hvert 15. sekund, og når du bytter side eller lukker den.
 
 Hver luke har bare ett forsøk. Eldre luker kan besvares senere, men gir da ikke bonus. Fritekstsvar rettes tolerant: store og små bokstaver, tegnsetting, mellomrom, «en/ei/et» og små skrivefeil spiller ingen rolle. Reglene ligger i `src/domain/scoring.ts` og `src/domain/answerMatching.ts`.
 
@@ -84,9 +84,9 @@ npm run demo         # http://localhost:5173 – demomodus med kontrollpanel
 npm run build:demo   # én selvstendig HTML-fil i dist-demo/index.html
 ```
 
-Demomodus hopper over fellespassordet, og luciatoget kommer bare når du trykker på knappen. Demoen lagrer alt i nettleseren og starter 8. desember, og panelet nede til høyre lar deg:
+Demomodus hopper over fellespassordet, og luciatoget kommer bare når du trykker på knappen i demopanelet. Demoen lagrer alt i nettleseren og starter 8. desember, og panelet nede til høyre lar deg:
 
-- bytte dato (pil eller hurtigknapper, også 13. desember med luciatog)
+- bytte dato (pil eller hurtigknapper)
 - åpne dagens luke
 - styre Nissetunet: luciatog, snøballkrig, pepperkakeregn, skøytetur og «kile alle»
 - fylle poengtavla med seks demodeltakere

@@ -8,6 +8,7 @@ import {
   snowballFight,
   snowballPosition,
   startProcession,
+  throwPlayerSnowball,
   tick,
   type SceneState,
 } from './sceneModel';
@@ -91,5 +92,40 @@ describe('directed actions', () => {
     expect(scene.actors.every((a) => isOnIce(a.target))).toBe(true);
     scene = run(scene, 0, 400);
     expect(scene.actors.some((a) => a.activity === 'skating' || a.activity === 'running' || a.activity === 'walking')).toBe(true);
+  });
+});
+
+describe('days', () => {
+  it('never skates or throws snowballs on an ordinary day', () => {
+    let scene = createScene(cast, half, 0, { skating: false, snowballFights: false });
+    let calls = 0;
+    const rolls = () => [0.05, 0.3, 0.5][calls++ % 3];
+    let sawSkating = false;
+    let sawSnowball = false;
+    for (let now = 0; now < 20_000; now += 50) {
+      scene = tick(scene, 50, now, rolls);
+      sawSkating ||= scene.actors.some((a) => a.activity === 'skating');
+      sawSnowball ||= scene.snowballs.length > 0;
+    }
+    expect(sawSkating).toBe(false);
+    expect(sawSnowball).toBe(false);
+  });
+
+  it('lets the player hit a nisse with a snowball', () => {
+    let scene = createScene(cast, half, 0, { skating: false, snowballFights: true });
+    const target = scene.actors[0];
+    scene = throwPlayerSnowball(scene, { x: target.x, y: target.y - 6 }, 0);
+    expect(scene.snowballs[0]).toMatchObject({ targetId: target.id, throwerId: -1 });
+    scene = tick(scene, 50, 800, half);
+    expect(scene.actors[0].activity).toBe('hit');
+  });
+
+  it('a snowball in the empty snow just lands', () => {
+    let scene = createScene(cast, half, 0);
+    scene = { ...scene, actors: scene.actors.map((a) => ({ ...a, x: 90, y: 90 })) };
+    scene = throwPlayerSnowball(scene, { x: 10, y: 40 }, 0);
+    expect(scene.snowballs[0].targetId).toBe(-1);
+    scene = tick(scene, 50, 800, half);
+    expect(scene.snowballs).toEqual([]);
   });
 });

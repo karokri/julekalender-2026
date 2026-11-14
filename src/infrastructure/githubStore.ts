@@ -229,5 +229,7 @@ async function explain(res: Response, repo: string): Promise<string> {
     409: 'Data-repoet er tomt – legg til en README så main-branchen finnes.',
     422: 'Data-repoet er tomt eller branchen finnes ikke – legg til en README.',
   };
-  return `GitHub ${res.status}: ${hints[res.status] ?? message}`;
+  const hint = hints[res.status];
+  // Include GitHub's own message too – it often says exactly what is wrong.
+  return `GitHub ${res.status}: ${hint ?? message}${hint && message ? ` (${message})` : ''}`;
 }

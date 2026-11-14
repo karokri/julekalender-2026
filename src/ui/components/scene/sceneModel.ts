@@ -49,7 +49,16 @@ export interface Procession {
   members: number[];
 }
 
+/** What the nisser get up to today. Skating and snowball fights only happen on some days. */
+export interface SceneRules {
+  skating: boolean;
+  snowballFights: boolean;
+}
+
+export const EVERYDAY: SceneRules = { skating: false, snowballFights: false };
+
 export interface SceneState {
+  rules: SceneRules;
   actors: Actor[];
   snowballs: Snowball[];
   cookies: Cookie[];
@@ -81,7 +90,7 @@ export const POKE_LINES = [
   'Ho ho hoo!',
   'Har du åpnet dagens luke?',
   'Kili-kili! 😆',
-  'Pepperkake? 🍪',
+  'Har du en pepperkake?',
   'Jeg har sett deg, og du har vært snill!',
   'God jul!',
   'Psst … nissen hører alt.',
@@ -93,8 +102,14 @@ const HIT_LINES = ['Au!', 'Hei!', 'Treff! ❄️', 'Nå skal du få!', 'Brrr!'];
 const THROW_LINES = ['Fang!', 'Snøballkrig!', 'Hehe!'];
 const LUCIA_LINES = ['♪ Sankta Lucia ♪', '♪ Natten går tunge fjed ♪', '♪ Svart senker natten seg ♪'];
 
-export function createScene(cast: { kind: ActorKind; look: number }[], random: Random, now: number): SceneState {
+export function createScene(
+  cast: { kind: ActorKind; look: number }[],
+  random: Random,
+  now: number,
+  rules: SceneRules = { skating: true, snowballFights: true },
+): SceneState {
   return {
+    rules,
     actors: cast.map(({ kind, look }, id) => {
       const start = randomGroundPoint(random);
       return {
@@ -134,16 +149,16 @@ export function tick(state: SceneState, elapsedMs: number, now: number, random: 
   let nextId = next.nextId;
 
   const actors = next.actors.map((actor) => {
-    if (actor.busyUntil > now || actor.activity === 'lucia') return move(actor, elapsedMs, now);
+    if (actor.busyUntil > now || actor.activity === 'lucia') return move(actor, elapsedMs, now, next.rules.skating);
 
-    let moved = move(actor, elapsedMs, now);
+    let moved = move(actor, elapsedMs, now, next.rules.skating);
 
     // Reached a cookie?
     if (moved.chasingCookieId !== undefined && arrived(moved)) {
       const id = moved.chasingCookieId;
       cookies = cookies.filter((c) => c.id !== id);
       return {
-        ...say({ ...moved, activity: 'eating' as const, chasingCookieId: undefined }, 'Nam nam! 🍪', now),
+        ...say({ ...moved, activity: 'eating' as const, chasingCookieId: undefined }, 'Nam nam!', now),
         busyUntil: now + EAT_MS,
         restUntil: now + EAT_MS + 600,
       };
@@ -154,7 +169,7 @@ export function tick(state: SceneState, elapsedMs: number, now: number, random: 
     // Idle and rested: choose what to do next.
     const roll = random();
     const others = next.actors.filter((o) => o.id !== moved.id && o.activity !== 'lucia');
-    if (roll < 0.22 && others.length && moved.kind === 'nisse' && !isOnIce(moved)) {
+    if (next.rules.snowballFights && roll < 0.22 && others.length && moved.kind === 'nisse' && !isOnIce(moved)) {
       const victim = others[Math.floor(random() * others.length)];
       const ball: Snowball = {
         id: nextId++,
@@ -173,7 +188,9 @@ export function tick(state: SceneState, elapsedMs: number, now: number, random: 
       );
       return { ...moved, restUntil: now + THROW_MS + 400 + random() * 1500 };
     }
-    if (roll < 0.42) return { ...moved, target: randomIcePoint(random), running: false, restUntil: 0 };
+    if (next.rules.skating && roll < 0.42) {
+      return { ...moved, target: randomIcePoint(random), running: false, restUntil: 0 };
+    }
     const running = moved.kind === 'reindeer' ? random() < 0.6 : random() < 0.25;
     return { ...moved, target: randomGroundPoint(random), running, restUntil: 0 };
   });
@@ -181,7 +198,7 @@ export function tick(state: SceneState, elapsedMs: number, now: number, random: 
   return { ...next, actors: retargetOrphans(actors, cookies), cookies, snowballs, nextId };
 }
 
-function move(actor: Actor, elapsedMs: number, now: number): Actor {
+function move(actor: Actor, elapsedMs: number, now: number, skating: boolean): Actor {
   if (actor.restUntil > now && actor.activity !== 'lucia') return settle(actor, now);
   if (arrived(actor)) {
     if (actor.activity === 'lucia') return actor;
@@ -192,7 +209,7 @@ function move(actor: Actor, elapsedMs: number, now: number): Actor {
   }
   if (['throwing', 'hit', 'eating', 'cheering'].includes(actor.activity) && actor.busyUntil > now) return actor;
 
-  const onIce = isOnIce(actor);
+  const onIce = skating && isOnIce(actor);
   const speed =
     actor.activity === 'lucia'
       ? SPEED.lucia
@@ -216,7 +233,7 @@ function move(actor: Actor, elapsedMs: number, now: number): Actor {
     activity:
       actor.activity === 'lucia'
         ? 'lucia'
-        : isOnIce(position)
+        : skating && isOnIce(position)
           ? 'skating'
           : actor.running || actor.chasingCookieId !== undefined
             ? 'running'
@@ -307,7 +324,7 @@ export function dropCookie(state: SceneState, at: Point, now: number): SceneStat
     actors: state.actors.map((a) =>
       a.id === nearest.id
         ? {
-            ...say(a, a.kind === 'reindeer' ? 'Kjeks?! 😍' : 'Pepperkake!', now),
+            ...say(a, a.kind === 'reindeer' ? 'Pepperkake?! 😍' : 'Pepperkake!', now),
             target: besideCookie(cookie, a),
             chasingCookieId: cookie.id,
             restUntil: 0,
@@ -506,6 +523,7 @@ export function throwSnowball(state: SceneState, throwerId: number, targetId: nu
 /** Every nisse throws a snowball at someone else, slightly staggered. */
 export function snowballFight(state: SceneState, now: number, random: Random): SceneState {
   if (state.procession) return state;
+  state = { ...state, rules: { ...state.rules, snowballFights: true } };
   const throwers = state.actors.filter((a) => a.kind === 'nisse');
   return throwers.reduce((s, thrower, index) => {
     const others = s.actors.filter((a) => a.id !== thrower.id);
@@ -520,10 +538,37 @@ export function skateParty(state: SceneState, now: number, random: Random): Scen
   return {
     ...state,
     now,
+    rules: { ...state.rules, skating: true },
     actors: state.actors.map((a) => ({ ...a, target: randomIcePoint(random), restUntil: 0, busyUntil: 0, chasingCookieId: undefined })),
   };
 }
 
 export function pokeEveryone(state: SceneState, now: number, random: Random): SceneState {
   return state.actors.reduce((s, a) => poke(s, a.id, now, random), state);
+}
+
+/** The player throws a snowball from the bottom of the scene. Hits whoever is close to where it lands. */
+export const PLAYER = -1;
+const HIT_RADIUS = 7;
+
+export function throwPlayerSnowball(state: SceneState, at: Point, now: number): SceneState {
+  const to = clampToScene(at);
+  const victim = [...state.actors]
+    .filter((a) => a.activity !== 'lucia')
+    .map((a) => ({ a, d: dist({ x: a.x, y: a.y - 6 }, to) }))
+    .filter(({ d }) => d < HIT_RADIUS)
+    .sort((x, y) => x.d - y.d)[0]?.a;
+  const ball: Snowball = {
+    id: state.nextId,
+    from: { x: 50, y: 104 },
+    to: victim ? { x: victim.x, y: victim.y - 6 } : to,
+    targetId: victim ? victim.id : PLAYER,
+    throwerId: PLAYER,
+    thrownAt: now,
+  };
+  return { ...state, now, nextId: state.nextId + 1, snowballs: [...state.snowballs, ball] };
+}
+
+function clampToScene(p: Point): Point {
+  return { x: Math.min(98, Math.max(2, p.x)), y: Math.min(96, Math.max(30, p.y)) };
 }
